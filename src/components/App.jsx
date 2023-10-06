@@ -1,9 +1,10 @@
-import { CarsDetailes } from 'pages/CarsDetailes';
-import { Catalog } from 'pages/Catalog/Catalog';
-import { Favorites } from 'pages/Favorites/Favorites';
-import { Header } from 'pages/Header/Header';
-import { Home } from 'pages/Home/Home';
-import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { Header } from 'components/Header/Header';
+
+const Home = lazy(() => import('pages/Home/Home'));
+const Catalog = lazy(() => import('pages/Catalog/Catalog'));
+const Favorites = lazy(() => import('pages/Favorites/Favorites'));
 
 export const App = () => {
   return (
@@ -12,8 +13,8 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/cars/:carsId" element={<CarsDetailes />} />
       </Route>
+      <Route path="*" element={<Navigate to="/" replace={true} />} />
     </Routes>
   );
 };
