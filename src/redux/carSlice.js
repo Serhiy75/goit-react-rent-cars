@@ -14,7 +14,7 @@ export const carSlice = createSlice({
     },
     [fetchCars.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.items = action.payload;
+      state.items = [...state.items, ...action.payload];
     },
     [fetchCars.rejected]: (state, action) => {
       state.isError = action.payload;
