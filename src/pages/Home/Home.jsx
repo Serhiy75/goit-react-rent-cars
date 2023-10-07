@@ -1,29 +1,19 @@
-import { Button } from 'components/Button/Button';
-import { CarsList } from 'components/CarsList/CarsList';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { CARS_LIMIT, fetchCars } from 'redux/operations';
-import { selectAmountCars } from 'redux/selectors';
+import { HomePage, Img } from './Home.styled';
+import background from 'components/images/carrent.png';
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
-  const amount = useSelector(selectAmountCars);
-
-  const handleLoadMore = () => {
-    setPage(prevState => prevState + 1);
-  };
-
-  useEffect(() => {
-    dispatch(fetchCars(page));
-  }, [dispatch, page]);
-
   return (
-    <div>
-      Home
-      <CarsList />
-      {amount / CARS_LIMIT < 4 && <Button onClick={handleLoadMore} />}
-    </div>
+    <HomePage>
+      <h1>Wellcome to our car rental website!</h1>
+      <Img src={background} alt="car rental" />
+      <h2>
+        Here yuo can take a test drive and make your choice for renting a car!
+      </h2>
+      {/* <LinkBoks>
+        <ButtonLink to="/catalog">Catalog</ButtonLink>
+        <ButtonLink to="/favorites">Favorites</ButtonLink>
+      </LinkBoks> */}
+    </HomePage>
   );
 };
 

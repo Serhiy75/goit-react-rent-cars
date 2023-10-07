@@ -1,3 +1,5 @@
+import { Detailes } from './CarsDetailes.styled';
+
 export const CarsDetailes = () => {
-  return <div>CarsDetailes</div>;
+  return <Detailes>details</Detailes>;
 };
