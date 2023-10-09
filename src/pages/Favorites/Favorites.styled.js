@@ -12,6 +12,7 @@ export const LinkCatalog = styled(Link)`
   width: 200px;
   padding: 10px;
   margin-top: 24px;
+  text-decoration: none;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -35,7 +36,7 @@ export const LinkCatalog = styled(Link)`
 `;
 
 export const Travolta = styled.img`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+
+  margin: 0 auto;
 `;

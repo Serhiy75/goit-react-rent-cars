@@ -4,9 +4,8 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: beige;
+  background-color: rgb(175 238 255);
   padding: 20px;
-  /* border-bottom: 1px solid gray; */
 `;
 
 export const Navigation = styled.nav`
@@ -19,7 +18,7 @@ export const PageList = styled.ul`
   margin: 0;
   padding: 0;
   margin-left: 30px;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const NavigateItem = styled.li`
@@ -36,15 +35,14 @@ export const NavigateLink = styled(NavLink)`
   width: 100px;
   min-height: 20px;
   padding: 10px;
-  gap: 30px;
-  color: white;
-  background-color: blue;
-  border: 1px solid blue;
+  color: blue;
+  background-color: transparent;
+
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
   &.active {
-    background-color: #afffff;
-    color: #000000;
+    background-color: blue;
+    color: yellow;
   }
   &:hover {
     scale: 1.1;

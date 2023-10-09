@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars } from './operations';
+import { fetchCars, fetchFirstCars } from './operations';
 
 export const carSlice = createSlice({
   name: 'Cars',
@@ -9,7 +9,15 @@ export const carSlice = createSlice({
     isError: '',
     filter: null,
   },
+  reducers: {
+    clearCarsList(state) {
+      state.items = [];
+    },
+  },
   extraReducers: {
+    [fetchFirstCars.fulfilled]: (state, action) => {
+      state.items = action.payload;
+    },
     [fetchCars.pending]: state => {
       state.isLoading = true;
     },
@@ -47,3 +55,4 @@ export const carSlice = createSlice({
     // },
   },
 });
+export const { clearCarsList } = carSlice.actions;

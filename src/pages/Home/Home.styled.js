@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const HomePage = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   background-color: whitesmoke;
   margin: 0;
@@ -24,6 +24,7 @@ export const Img = styled.img`
   display: block;
   width: 1000px;
   height: 600px;
+  margin: 0;
 `;
 
 export const ButtonLink = styled(Link)`
