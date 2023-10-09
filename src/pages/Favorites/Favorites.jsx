@@ -17,10 +17,10 @@ const Favorites = () => {
     <div>
       {favoriteCars.length > 0 ? (
         <>
+          <CarsList cars={favoriteCars} />
           <DeleteBtn onClick={handleDeleteAll}>
             delite all favorites cars
           </DeleteBtn>
-          <CarsList cars={favoriteCars} />
         </>
       ) : (
         <>

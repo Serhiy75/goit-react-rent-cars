@@ -6,7 +6,6 @@ import {
   Item,
   Paragraf,
   StyledHeart,
-  StyledHeartFillIcon,
   StyledHeartIcon,
 } from './CarsListItem.styled';
 import { Modal } from 'components/Modal/Modal';
@@ -14,20 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectFavoritesCars } from 'redux/selectors';
 import { addFavoriteCar, deleteFavoritCar } from 'redux/favoriteSlice';
 
-export const CarsListItem = ({
-  id,
-  img,
-  model,
-  make,
-  year,
-  rentalPrice,
-  accessories,
-
-  address,
-  rentalCompany,
-  type,
-  functionalities,
-}) => {
+export const CarsListItem = ({ car }) => {
   const [toggleModal, setToggleModal] = useState(false);
   const dispatch = useDispatch();
   const favoriteCars = useSelector(selectFavoritesCars);
@@ -36,30 +22,31 @@ export const CarsListItem = ({
   };
 
   const handleToogleFavorites = carId => {
-    const car = favoriteCars.find(({ id }) => carId === id);
-    console.log(car);
-    if (!car) {
-      dispatch(
-        addFavoriteCar({
-          id,
-          img,
-          model,
-          make,
-          year,
-          rentalPrice,
-          accessories,
-          address,
-          rentalCompany,
-          type,
-          functionalities,
-        })
-      );
+    const persistedCar = favoriteCars.find(({ id }) => carId === id);
+
+    if (!persistedCar) {
+      dispatch(addFavoriteCar(car));
     } else {
       dispatch(deleteFavoritCar(carId));
     }
   };
 
+  const {
+    id,
+    img,
+    make,
+    model,
+    year,
+    rentalPrice,
+    functionalities,
+    accessories,
+    rentalCompany,
+    type,
+    address,
+  } = car;
+
   const updateaddress = address.split(', ').slice(-2).join(' | ');
+  const isInFavorites = favoriteCars.some(i => i.id === id);
   return (
     <>
       <Item>
@@ -78,14 +65,10 @@ export const CarsListItem = ({
           learn more
         </Btn>
         <StyledHeart id={id} onClick={() => handleToogleFavorites(id)}>
-          {!favoriteCars.some(i => i.id === id) ? (
-            <StyledHeartIcon />
-          ) : (
-            <StyledHeartFillIcon />
-          )}
+          <StyledHeartIcon $isInFavorites={isInFavorites} />
         </StyledHeart>
       </Item>
-      {toggleModal && <Modal handleClick={handleClick}></Modal>}
+      {toggleModal && <Modal handleClick={handleClick} car={car}></Modal>}
     </>
   );
 };

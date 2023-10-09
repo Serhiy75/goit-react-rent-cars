@@ -1,4 +1,4 @@
-import { lazy, useEffect, useRef } from 'react';
+import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from 'components/Header/Header';
 import { useSelector } from 'react-redux';
@@ -11,21 +11,13 @@ const Favorites = lazy(() => import('pages/Favorites/Favorites'));
 
 export const App = () => {
   const isLoading = useSelector(selectLoading);
-  const firstRender = useRef(true);
-
-  useEffect(() => {
-    firstRender.current = false;
-  }, []);
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
-          <Route
-            path="/catalog"
-            element={<Catalog firstRender={firstRender} />}
-          />
+          <Route path="/catalog" element={<Catalog />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Route>

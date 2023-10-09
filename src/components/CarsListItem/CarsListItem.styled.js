@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { GoHeart, GoHeartFill } from 'react-icons/go';
+import { ReactComponent as GoHeart } from 'images/heart.svg';
 
 export const Item = styled.li`
   position: relative;
@@ -70,11 +70,8 @@ export const StyledHeart = styled.div`
 export const StyledHeartIcon = styled(GoHeart)`
   width: 18px;
   height: 18px;
-  stroke: white;
-  color: rgba(255, 255, 255, 0.8);
-`;
-export const StyledHeartFillIcon = styled(GoHeartFill)`
-  width: 18px;
-  height: 18px;
-  color: rgba(52, 112, 255, 1);
+  fill: ${({ $isInFavorites }) =>
+    $isInFavorites ? 'rgba(52, 112, 255, 1)' : 'transparent'};
+  stroke: ${({ $isInFavorites }) =>
+    $isInFavorites ? 'rgba(52, 112, 255, 1)' : 'white'};
 `;
