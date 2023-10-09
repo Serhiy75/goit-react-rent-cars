@@ -94,7 +94,7 @@ export const Modal = ({ handleClick, car }) => {
 
           <Descr>
             <Country>
-              {updateaddress} | id: {id} | type: {type}
+              {updateaddress} | id: {id} | Year: {year} | type: {type}
             </Country>
             <Country>
               fuelConsumption: {fuelConsumption} | engineSize: {engineSize}

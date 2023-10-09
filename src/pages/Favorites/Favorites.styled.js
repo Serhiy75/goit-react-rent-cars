@@ -61,3 +61,9 @@ export const Travolta = styled.img`
 
   margin: 0 auto;
 `;
+export const Notinlist = styled.h2`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+`;

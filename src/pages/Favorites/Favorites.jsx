@@ -1,5 +1,10 @@
 import { selectFavoritesCars } from 'redux/selectors';
-import { DeleteBtn, LinkCatalog, Travolta } from './Favorites.styled';
+import {
+  DeleteBtn,
+  LinkCatalog,
+  Notinlist,
+  Travolta,
+} from './Favorites.styled';
 import notfound from '../../images/pulp-fiction-john-travolta.gif';
 import { useDispatch, useSelector } from 'react-redux';
 import { CarsList } from 'components/CarsList/CarsList';
@@ -25,7 +30,7 @@ const Favorites = () => {
       ) : (
         <>
           <Travolta src={notfound} alt="Nothing in List" />
-          <p>Nothing in List</p>
+          <Notinlist>Nothing in List !</Notinlist>
           <LinkCatalog to="/catalog">Add some favorites cars</LinkCatalog>
         </>
       )}
