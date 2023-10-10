@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const ButtonClass = styled.button`
-  margin-left: auto;
-  margin-right: auto;
-  padding: 8px 16px;
+  margin: 10px auto;
+  align-items: center;
+  padding: 5px 16px;
   border-radius: 8px;
   background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  display: inline-block;
+  display: block;
   color: #fff;
   border: 0;
   text-decoration: none;
