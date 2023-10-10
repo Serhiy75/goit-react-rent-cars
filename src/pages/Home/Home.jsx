@@ -1,5 +1,5 @@
 import { HomePage, Img } from './Home.styled';
-import background from 'components/images/carrent.png';
+import background from 'images/carrent.png';
 
 const Home = () => {
   return (
