@@ -28,12 +28,28 @@ export const Paragraf = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
-  margin: 0;
+  margin: 20px 0;
+`;
+
+export const Span = styled.span`
+  color: #3470ff;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
 `;
 
 export const Descr = styled.p`
   margin: 0;
+  margin-bottom: 10px;
   padding: 0 10px;
+  color: rgba(18, 20, 23, 0.5);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 `;
 export const Btn = styled.button`
   display: flex;
@@ -47,8 +63,8 @@ export const Btn = styled.button`
   margin: 20px auto;
   cursor: pointer;
   color: white;
-  background-color: blue;
-  border: 1px solid blue;
+  background-color: #3470ff;
+  border: 1px solid #3470ff;
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
   &.active {

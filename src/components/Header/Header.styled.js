@@ -35,13 +35,13 @@ export const NavigateLink = styled(NavLink)`
   width: 100px;
   min-height: 20px;
   padding: 10px;
-  color: blue;
+  color: #3470ff;
   background-color: transparent;
 
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
   &.active {
-    background-color: blue;
+    background-color: #3470ff;
     color: yellow;
   }
   &:hover {

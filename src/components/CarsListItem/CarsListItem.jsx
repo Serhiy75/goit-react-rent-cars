@@ -6,6 +6,7 @@ import {
   ImageThumb,
   Item,
   Paragraf,
+  Span,
   StyledHeart,
   StyledHeartIcon,
 } from './CarsListItem.styled';
@@ -56,7 +57,7 @@ export const CarsListItem = ({ car }) => {
         </ImageThumb>
         <Paragraf>
           <p>
-            {make} {model}, {year}
+            {make} <Span> {model}, </Span> {year}
           </p>
           <p> {rentalPrice}</p>
         </Paragraf>

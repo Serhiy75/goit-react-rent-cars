@@ -136,11 +136,20 @@ export const Tel = styled.a`
   text-decoration: none;
   max-width: 150px;
   margin: 0;
-  margin-left: 20px auto;
+  padding: 10px;
   margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    background-color: #afffff;
+    color: #000000;
+  }
   &:hover {
-    background-color: blue;
+    scale: 1.1;
     color: red;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 5px 0px rgba(0, 0, 0, 0.14), 0px 2px 5px -1px rgba(0, 0, 0, 0.12);
   }
 `;
 

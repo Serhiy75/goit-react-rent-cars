@@ -1,67 +1,58 @@
-import { FiSearch } from 'react-icons/fi';
-import { BtnSearch, Select, SearchFormStyled } from './SearchForm.styled';
-import { useState } from 'react';
-
-const makeCars = [
-  'Buick',
-  'Volvo',
-  'HUMMER',
-  'Subaru',
-  'Mitsubishi',
-  'Nissan',
-  'Lincoln',
-  'GMC',
-  'Hyundai',
-  'MINI',
-  'Bentley',
-  'Aston Martin',
-  'Pontiac',
-  'Lamborghini',
-  'Audi',
-  'BMW',
-  'Chevrolet',
-  'Mercedes-Benz',
-  'Chrysler',
-  'Kia',
-  'Land',
-];
+import { makes, pricePoints } from 'components/utils/serchFormPoints';
+import Select from 'react-select';
+import {
+  BtnSearch,
+  EnterText,
+  Form,
+  LabelMilage1,
+  LabelMilage2,
+  SubForm,
+  Title,
+} from './SearchForm.styled';
 
 export const SearchForm = () => {
-  const [make, setMake] = useState('');
-
-  const handleChange = event => {
-    setMake(event.target.value);
+  const handleSubmit = e => {
+    e.preventDefault();
+    const { make, mileageFrom, mileageTo, rentalPrice } = e.target.elements;
+    const filters = {
+      make: make.value,
+      rentalPrice: rentalPrice.value,
+      mileageFrom: mileageFrom.value,
+      mileageTo: mileageTo.value,
+    };
+    console.log(filters);
   };
-  const handleSubmit = event => {
-    event.preventDefault();
-    if (!make) {
-      return alert('Slect any make');
-    }
-    console.log(make);
-    setMake('');
-  };
-
   return (
-    <SearchFormStyled onSubmit={handleSubmit}>
-      <BtnSearch type="submit">
-        <FiSearch size="16px" />
-      </BtnSearch>
-      <Select
-        aria-label="select"
-        name="region"
-        required
-        onChange={handleChange}
-        defaultValue="default"
-      >
-        <option disabled value="default">
-          Enter the text
-        </option>
-        {makeCars.map(make => (
-          <option key={make} value={make}>
-            {make}
-          </option>
-        ))}
-      </Select>
-    </SearchFormStyled>
+    <Form onSubmit={handleSubmit}>
+      <SubForm>
+        <label>
+          <Title> Car brand </Title>
+          <Select name="make" placeholder="Enter the text" options={makes} />
+        </label>
+        <label>
+          <Title>Price / 1 hour </Title>
+          <Select
+            name="rentalPrice"
+            placeholder="To $"
+            options={pricePoints.map(price => ({
+              value: price,
+              label: `$${price}`,
+            }))}
+          />
+        </label>
+      </SubForm>
+      <div>
+        <Title> Car mileage / km</Title>
+        <EnterText>
+          <label>
+            <LabelMilage1 type="number" name="mileageFrom" placeholder="From" />
+          </label>
+          <label>
+            <LabelMilage2 type="number" name="mileageTo" placeholder="To" />
+          </label>
+        </EnterText>
+      </div>
+      <BtnSearch type="submit">Search</BtnSearch>
+    </Form>
   );
 };

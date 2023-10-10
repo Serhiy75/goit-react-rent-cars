@@ -17,3 +17,6 @@ code {
 .no-scroll {
   overflow: hidden;
 }
+p {
+  margin: 0;
+}
