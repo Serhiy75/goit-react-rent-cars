@@ -7,7 +7,7 @@ export const carSlice = createSlice({
     items: [],
     isLoading: false,
     isError: '',
-    isShowModal: false,
+
     filter: null,
   },
   reducers: {

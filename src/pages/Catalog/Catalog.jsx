@@ -17,6 +17,7 @@ const Catalog = () => {
     if (page === 1) {
       dispatch(clearCarsList());
     }
+
     dispatch(fetchCars(page));
   }, [dispatch, page]);
 

@@ -11,41 +11,36 @@ import {
   Driver,
   Functional,
   Image,
+  ImageThumb,
   Item,
   MilegEPrice,
+  Milege,
   ModalStyled,
   Paragraf,
   Price,
+  PriceCar,
   Rental,
   Span,
   Tel,
   Title,
   User,
 } from './Modal.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsShowModal } from 'redux/selectors';
+import { numberWithVirgule } from 'helpers/numberWithVirgule';
 
 export const Modal = ({ handleClick, car }) => {
-  const dispatch = useDispatch();
-  const isShowModal = useSelector(selectIsShowModal);
-
-  useEffect(() => {
-    if (isShowModal) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
-  }, [dispatch, isShowModal]);
-
   useEffect(() => {
     const handlePressKey = event => {
       if (event.code === 'Escape') {
         handleClick();
       }
     };
+    document.body.classList.add('no-scroll');
     window.addEventListener('keydown', handlePressKey);
 
-    return () => window.removeEventListener('keydown', handlePressKey);
+    return () => {
+      window.removeEventListener('keydown', handlePressKey);
+      document.body.classList.remove('no-scroll');
+    };
   }, [handleClick]);
 
   const handleOverlayClick = e => {
@@ -72,9 +67,10 @@ export const Modal = ({ handleClick, car }) => {
   } = car;
 
   const updateaddress = address.split(', ').slice(-2).join(' | ');
-  const userconditions = rentalConditions.split('').slice(0, 15);
-  const driverLicense = rentalConditions.split('').slice(15, -27);
-  const securyty = rentalConditions.split('').slice(38);
+  const rentalConditionsToArray = rentalConditions.split('\n');
+  const userconditions = rentalConditionsToArray[0];
+  const driverLicense = rentalConditionsToArray[1];
+  const securyty = rentalConditionsToArray[2];
 
   return (
     <Overlay onClick={handleOverlayClick}>
@@ -83,7 +79,9 @@ export const Modal = ({ handleClick, car }) => {
           <GrClose siz={24} />
         </CloseBtn>
         <Item>
-          <Image src={img} alt={model} />
+          <ImageThumb>
+            <Image src={img} alt={model} />
+          </ImageThumb>
           <Paragraf>
             <Title>
               {make}
@@ -114,8 +112,12 @@ export const Modal = ({ handleClick, car }) => {
             </User>
             <MilegEPrice>
               <Price>{securyty}</Price>
-              <Price>Mileage: {mileage} </Price>
-              <Price> Price: {rentalPrice}</Price>
+              <Price>
+                Mileage: <Milege>{numberWithVirgule(mileage)} </Milege>
+              </Price>
+              <Price>
+                Price: <PriceCar>{rentalPrice.slice(1) + '$'}</PriceCar>
+              </Price>
             </MilegEPrice>
           </Descr>
           <Tel href="tel:+380730000000"> rental car</Tel>

@@ -13,25 +13,13 @@ const instance = axios.create({
     limit: CARS_LIMIT,
   },
 });
-export const fetchFirstCars = createAsyncThunk(
-  'adverts/fetchFirstCars',
-  async (page, thunkApi) => {
-    try {
-      const { data } = await instance.get(`/adverts?page=${page}`);
-      console.log(data);
-      return data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
-    }
-  }
-);
 
 export const fetchCars = createAsyncThunk(
   'adverts/fetchCars',
   async (page, thunkApi) => {
     try {
       const { data } = await instance.get(`/adverts?page=${page}`);
-      console.log(data);
+
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

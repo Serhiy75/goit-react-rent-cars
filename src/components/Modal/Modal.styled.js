@@ -21,11 +21,17 @@ export const Item = styled.li`
   background-color: white;
 `;
 
-export const Image = styled.img`
-  width: 100%;
+export const ImageThumb = styled.div`
   height: 268px;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
+`;
+
+export const Image = styled.img`
+  height: 268px;
+  object-fit: cover;
+  width: 100%;
+  object-position: 50% 50%;
 `;
 
 export const Title = styled.h3`
@@ -193,4 +199,24 @@ export const Price = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+`;
+
+export const Milege = styled.span`
+  color: #3470ff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.24px;
+`;
+
+export const PriceCar = styled.span`
+  color: #3470ff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.24px;
 `;

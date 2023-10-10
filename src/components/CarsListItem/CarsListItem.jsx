@@ -3,6 +3,7 @@ import {
   Btn,
   Descr,
   Image,
+  ImageThumb,
   Item,
   Paragraf,
   StyledHeart,
@@ -50,7 +51,9 @@ export const CarsListItem = ({ car }) => {
   return (
     <>
       <Item>
-        <Image src={img} alt={model} />
+        <ImageThumb>
+          <Image src={img} alt={model} />
+        </ImageThumb>
         <Paragraf>
           <p>
             {make} {model}, {year}
