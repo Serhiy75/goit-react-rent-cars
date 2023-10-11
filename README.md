@@ -9,7 +9,7 @@ react-router-dom, axios, react icons and other libraries.
 
 ## Description application "Rent-Cars"
 
-1. The application is designed to search for cars for rent.
+1. The application is designed to search cars for rent.
 2. For detailed search, a filter has been implemented that allows you to search
    for a car by brand, model, mileage or price per hour of rental.
 3. It is also possible to save the selected cars, and then view the result on
