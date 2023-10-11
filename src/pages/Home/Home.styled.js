@@ -33,12 +33,23 @@ export const ButtonLink = styled(Link)`
   list-style: none;
   text-decoration: none;
   align-items: center;
-  width: 100px;
+  width: 180px;
   min-height: 20px;
   padding: 10px;
   gap: 30px;
-  color: white;
-  background-color: blue;
-  border: 1px solid blue;
+  color: yellow;
+  background-color: #3470ff;
+  border: 1px solid #3470ff;
   border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    background-color: #afffff;
+    color: #000000;
+  }
+  &:hover {
+    scale: 1.1;
+    color: red;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 5px 0px rgba(0, 0, 0, 0.14), 0px 2px 5px -1px rgba(0, 0, 0, 0.12);
+  }
 `;

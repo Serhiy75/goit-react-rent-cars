@@ -1,4 +1,4 @@
-import { HomePage, Img } from './Home.styled';
+import { ButtonLink, HomePage, Img, LinkBoks } from './Home.styled';
 import background from 'images/carrent.png';
 
 const Home = () => {
@@ -9,6 +9,9 @@ const Home = () => {
       <h2>
         Here you can take a test drive and make your choice for renting a car!
       </h2>
+      <LinkBoks>
+        <ButtonLink to="/catalog">Go to our Catalog</ButtonLink>
+      </LinkBoks>
     </HomePage>
   );
 };
