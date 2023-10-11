@@ -9,10 +9,6 @@ const Home = () => {
       <h2>
         Here you can take a test drive and make your choice for renting a car!
       </h2>
-      {/* <LinkBoks>
-        <ButtonLink to="/catalog">Catalog</ButtonLink>
-        <ButtonLink to="/favorites">Favorites</ButtonLink>
-      </LinkBoks> */}
     </HomePage>
   );
 };

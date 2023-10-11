@@ -1,7 +1,3 @@
-//64f9ff184098a7f2fc1543aa.mockapi.io/adverts
-//649c1e0a0480757192377b6a.mockapi.io';
-//64c21d6bfa35860baea1349e.mockapi.io/
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 

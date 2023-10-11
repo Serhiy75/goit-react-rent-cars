@@ -26,6 +26,7 @@ import {
   User,
 } from './Modal.styled';
 import { numberWithVirgule } from 'helpers/numberWithVirgule';
+import PropTypes from 'prop-types';
 
 export const Modal = ({ handleClick, car }) => {
   useEffect(() => {
@@ -70,7 +71,6 @@ export const Modal = ({ handleClick, car }) => {
   const rentalConditionsToArray = rentalConditions.split('\n');
   const userconditions = rentalConditionsToArray[0];
   const userConditionsDescr = userconditions.split(': ');
-  console.log(userConditionsDescr);
   const driverLicense = rentalConditionsToArray[1];
   const securyty = rentalConditionsToArray[2];
 
@@ -130,4 +130,27 @@ export const Modal = ({ handleClick, car }) => {
       </ModalStyled>
     </Overlay>
   );
+};
+
+Modal.propTypes = {
+  cars: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      year: PropTypes.number,
+      make: PropTypes.string,
+      model: PropTypes.string,
+      type: PropTypes.string,
+      img: PropTypes.string,
+      description: PropTypes.string,
+      accessories: PropTypes.arrayOf(PropTypes.string),
+      functionalities: PropTypes.arrayOf(PropTypes.string),
+      rentalPrice: PropTypes.string,
+      rentalCompany: PropTypes.string,
+      address: PropTypes.string,
+      fuelConsumption: PropTypes.string,
+      engineSize: PropTypes.string,
+      rentalConditions: PropTypes.string,
+      mileage: PropTypes.number,
+    })
+  ),
 };

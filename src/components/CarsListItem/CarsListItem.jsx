@@ -10,10 +10,12 @@ import {
   StyledHeart,
   StyledHeartIcon,
 } from './CarsListItem.styled';
+
 import { Modal } from 'components/Modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavoritesCars } from 'redux/selectors';
 import { addFavoriteCar, deleteFavoritCar } from 'redux/favoriteSlice';
+import PropTypes from 'prop-types';
 
 export const CarsListItem = ({ car }) => {
   const [toggleModal, setToggleModal] = useState(false);
@@ -75,4 +77,23 @@ export const CarsListItem = ({ car }) => {
       {toggleModal && <Modal handleClick={handleClick} car={car}></Modal>}
     </>
   );
+};
+
+CarsListItem.propTypes = {
+  cars: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      year: PropTypes.number,
+      make: PropTypes.string,
+      model: PropTypes.string,
+      type: PropTypes.string,
+      img: PropTypes.string,
+      description: PropTypes.string,
+      accessories: PropTypes.arrayOf(PropTypes.string),
+      functionalities: PropTypes.arrayOf(PropTypes.string),
+      rentalPrice: PropTypes.string,
+      rentalCompany: PropTypes.string,
+      address: PropTypes.string,
+    })
+  ),
 };

@@ -9,8 +9,9 @@ export const ScrollButton = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  padding: 0;
   margin: 0;
+  cursor: pointer;
   & svg {
     transform: rotate(220deg);
     color: #3470ff;
