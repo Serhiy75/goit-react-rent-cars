@@ -1,14 +1,11 @@
 import { selectFavoritesCars } from 'redux/selectors';
-import {
-  DeleteBtn,
-  LinkCatalog,
-  Notinlist,
-  Travolta,
-} from './Favorites.styled';
-import notfound from '../../images/pulp-fiction-john-travolta.gif';
+import { DeleteBtn, LinkCatalog } from './Favorites.styled';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { CarsList } from 'components/CarsList/CarsList';
 import { deleteAllFavoriteCars } from 'redux/favoriteSlice';
+import { NotFound } from 'components/NotFound/NotFound';
+import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -19,22 +16,25 @@ const Favorites = () => {
   };
 
   return (
-    <div>
-      {favoriteCars.length > 0 ? (
-        <>
-          <CarsList cars={favoriteCars} />
-          <DeleteBtn onClick={handleDeleteAll}>
-            delite all favorites cars
-          </DeleteBtn>
-        </>
-      ) : (
-        <>
-          <Travolta src={notfound} alt="Nothing in List" />
-          <Notinlist>Nothing in List !</Notinlist>
-          <LinkCatalog to="/catalog">Add some favorites cars</LinkCatalog>
-        </>
-      )}
-    </div>
+    <>
+      <div>
+        {favoriteCars.length > 0 ? (
+          <>
+            <CarsList cars={favoriteCars} />
+            <DeleteBtn onClick={handleDeleteAll}>
+              delite all favorites cars
+            </DeleteBtn>
+          </>
+        ) : (
+          <>
+            <NotFound />
+
+            <LinkCatalog to="/catalog">Add some favorites cars</LinkCatalog>
+          </>
+        )}
+      </div>
+      <ScrollToTop />
+    </>
   );
 };
 

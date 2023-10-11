@@ -1,4 +1,5 @@
 export const makes = [
+  { value: '', label: 'All' },
   { value: 'Buick', label: 'Buick' },
   { value: 'Volvo', label: 'Volvo' },
   { value: 'HUMMER', label: 'HUMMER' },
@@ -25,6 +26,6 @@ export const makes = [
 ];
 
 export const pricePoints = [
-  5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130,
+  0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130,
   140, 150,
 ];

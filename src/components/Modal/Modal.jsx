@@ -69,6 +69,8 @@ export const Modal = ({ handleClick, car }) => {
   const updateaddress = address.split(', ').slice(-2).join(' | ');
   const rentalConditionsToArray = rentalConditions.split('\n');
   const userconditions = rentalConditionsToArray[0];
+  const userConditionsDescr = userconditions.split(': ');
+  console.log(userConditionsDescr);
   const driverLicense = rentalConditionsToArray[1];
   const securyty = rentalConditionsToArray[2];
 
@@ -107,7 +109,10 @@ export const Modal = ({ handleClick, car }) => {
             </Accessories>
             <Rental>Rental Conditions:</Rental>
             <User>
-              <Age>{userconditions} </Age>
+              <Age>
+                {userConditionsDescr[0]}:
+                <Milege> {userConditionsDescr[1]} </Milege>
+              </Age>
               <Driver>{driverLicense}</Driver>
             </User>
             <MilegEPrice>

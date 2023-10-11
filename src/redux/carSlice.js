@@ -7,8 +7,6 @@ export const carSlice = createSlice({
     items: [],
     isLoading: false,
     isError: '',
-
-    filter: null,
   },
   reducers: {
     clearCarsList(state) {
@@ -27,30 +25,6 @@ export const carSlice = createSlice({
       state.isError = action.payload;
       state.isLoading = false;
     },
-
-    // [addCars.pending]: state => {
-    //   state.isLoading = true;
-    // },
-    // [addCars.fulfilled]: (state, action) => {
-    //   state.items = [...state.items, action.payload];
-    //   state.isLoading = false;
-    // },
-    // [addCars.rejected]: (state, action) => {
-    //   state.isError = action.payload;
-    //   state.isLoading = false;
-    // },
-
-    // [deleteCars.pending]: state => {
-    //   state.isLoading = true;
-    // },
-    // [deleteCars.fulfilled]: (state, action) => {
-    //   state.items = state.items.filter(car => car.id !== action.payload.id);
-    //   state.isLoading = false;
-    // },
-    // [deleteCars.rejected]: (state, action) => {
-    //   state.isError = action.payload;
-    //   state.isLoading = false;
-    // },
   },
 });
 export const { clearCarsList } = carSlice.actions;

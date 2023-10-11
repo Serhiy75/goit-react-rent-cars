@@ -55,15 +55,3 @@ export const LinkCatalog = styled(Link)`
     scale: 0.95;
   }
 `;
-
-export const Travolta = styled.img`
-  display: block;
-
-  margin: 0 auto;
-`;
-export const Notinlist = styled.h2`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-`;

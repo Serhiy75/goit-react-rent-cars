@@ -9,18 +9,51 @@ import {
   SubForm,
   Title,
 } from './SearchForm.styled';
+import { useDispatch } from 'react-redux';
+import { fetchCars } from 'redux/operations';
+
+import { setFilter } from 'redux/filterSlice';
+import { clearCarsList } from 'redux/carSlice';
 
 export const SearchForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
     const { make, mileageFrom, mileageTo, rentalPrice } = e.target.elements;
+
+    if (
+      !make.value &&
+      !mileageFrom.value &&
+      !mileageTo.value &&
+      !rentalPrice.value
+    ) {
+      alert('Select any filter');
+      return;
+    }
+
+    const mileageFromInNumber = Number(mileageFrom.value);
+    const mileageToInNumber = Number(mileageTo.value);
+
+    if (mileageFromInNumber < 0 || mileageToInNumber < 0) {
+      alert('Select valid mileage');
+      return;
+    }
+
+    if (mileageFromInNumber > mileageToInNumber && mileageToInNumber !== 0) {
+      alert('Select mileage to more than mileage from');
+      return;
+    }
+
     const filters = {
       make: make.value,
-      rentalPrice: rentalPrice.value,
-      mileageFrom: mileageFrom.value,
-      mileageTo: mileageTo.value,
+      rentalPrice: Number(rentalPrice.value),
+      mileageFrom: mileageFromInNumber,
+      mileageTo: mileageToInNumber,
     };
-    console.log(filters);
+    dispatch(clearCarsList());
+    dispatch(fetchCars({ page: 1, limit: 32 }));
+    dispatch(setFilter(filters));
   };
   return (
     <Form onSubmit={handleSubmit}>
@@ -36,7 +69,7 @@ export const SearchForm = () => {
             placeholder="To $"
             options={pricePoints.map(price => ({
               value: price,
-              label: `$${price}`,
+              label: price === 0 ? 'All' : `$${price}`,
             }))}
           />
         </label>

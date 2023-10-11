@@ -62,7 +62,7 @@ export const CarsListItem = ({ car }) => {
           <p> {rentalPrice}</p>
         </Paragraf>
         <Descr>
-          {updateaddress} | {rentalCompany} |{make} |{id} |{type}|{' '}
+          {updateaddress} | {rentalCompany} | {make} | {id} | {type} |{' '}
           {accessories[0]} | {functionalities[0]}
         </Descr>
         <Btn id={id} onClick={handleClick}>
