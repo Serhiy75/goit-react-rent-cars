@@ -1,4 +1,4 @@
-export const makes = [
+const makes = [
   { value: '', label: 'All' },
   { value: 'Buick', label: 'Buick' },
   { value: 'Volvo', label: 'Volvo' },
@@ -25,6 +25,9 @@ export const makes = [
   { value: 'Ford', label: 'Ford' },
 ];
 
+export const sortedMakes = [...makes].sort((a, b) =>
+  a.label.toLowerCase().localeCompare(b.label.toLowerCase())
+);
 export const pricePoints = [
   0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130,
   140, 150,

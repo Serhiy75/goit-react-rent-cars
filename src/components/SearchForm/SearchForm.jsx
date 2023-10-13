@@ -1,4 +1,4 @@
-import { makes, pricePoints } from 'components/utils/serchFormPoints';
+import { pricePoints, sortedMakes } from 'components/utils/serchFormPoints';
 import Select from 'react-select';
 import {
   BtnSearch,
@@ -60,7 +60,11 @@ export const SearchForm = () => {
       <SubForm>
         <label>
           <Title> Car brand </Title>
-          <Select name="make" placeholder="Enter the text" options={makes} />
+          <Select
+            name="make"
+            placeholder="Enter the text"
+            options={sortedMakes}
+          />
         </label>
         <label>
           <Title>Price / 1 hour </Title>

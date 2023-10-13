@@ -12,7 +12,7 @@ export const ModalStyled = styled.div`
   padding: 40px;
 `;
 
-export const Item = styled.li`
+export const Item = styled.div`
   border-radius: 6px;
   max-width: 474px;
   min-height: 426px;

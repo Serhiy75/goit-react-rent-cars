@@ -80,20 +80,18 @@ export const CarsListItem = ({ car }) => {
 };
 
 CarsListItem.propTypes = {
-  cars: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      year: PropTypes.number,
-      make: PropTypes.string,
-      model: PropTypes.string,
-      type: PropTypes.string,
-      img: PropTypes.string,
-      description: PropTypes.string,
-      accessories: PropTypes.arrayOf(PropTypes.string),
-      functionalities: PropTypes.arrayOf(PropTypes.string),
-      rentalPrice: PropTypes.string,
-      rentalCompany: PropTypes.string,
-      address: PropTypes.string,
-    })
-  ),
+  car: PropTypes.shape({
+    id: PropTypes.number,
+    year: PropTypes.number,
+    make: PropTypes.string,
+    model: PropTypes.string,
+    type: PropTypes.string,
+    img: PropTypes.string,
+    description: PropTypes.string,
+    accessories: PropTypes.arrayOf(PropTypes.string),
+    functionalities: PropTypes.arrayOf(PropTypes.string),
+    rentalPrice: PropTypes.string,
+    rentalCompany: PropTypes.string,
+    address: PropTypes.string,
+  }),
 };

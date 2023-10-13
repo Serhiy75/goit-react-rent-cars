@@ -1,6 +1,7 @@
 import { Overlay } from 'components/Overlay/Overlay.styled';
 import { useEffect } from 'react';
 import { GrClose } from 'react-icons/gr';
+
 import {
   Accessories,
   Age,
@@ -27,6 +28,9 @@ import {
 } from './Modal.styled';
 import { numberWithVirgule } from 'helpers/numberWithVirgule';
 import PropTypes from 'prop-types';
+import { createPortal } from 'react-dom';
+
+const modalRoot = document.querySelector('#modal-root');
 
 export const Modal = ({ handleClick, car }) => {
   useEffect(() => {
@@ -74,7 +78,7 @@ export const Modal = ({ handleClick, car }) => {
   const driverLicense = rentalConditionsToArray[1];
   const securyty = rentalConditionsToArray[2];
 
-  return (
+  return createPortal(
     <Overlay onClick={handleOverlayClick}>
       <ModalStyled>
         <CloseBtn className="button" type="button" onClick={handleClick}>
@@ -128,29 +132,28 @@ export const Modal = ({ handleClick, car }) => {
           <Tel href="tel:+380730000000"> rental car</Tel>
         </Item>
       </ModalStyled>
-    </Overlay>
+    </Overlay>,
+    modalRoot
   );
 };
 
 Modal.propTypes = {
-  cars: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      year: PropTypes.number,
-      make: PropTypes.string,
-      model: PropTypes.string,
-      type: PropTypes.string,
-      img: PropTypes.string,
-      description: PropTypes.string,
-      accessories: PropTypes.arrayOf(PropTypes.string),
-      functionalities: PropTypes.arrayOf(PropTypes.string),
-      rentalPrice: PropTypes.string,
-      rentalCompany: PropTypes.string,
-      address: PropTypes.string,
-      fuelConsumption: PropTypes.string,
-      engineSize: PropTypes.string,
-      rentalConditions: PropTypes.string,
-      mileage: PropTypes.number,
-    })
-  ),
+  car: PropTypes.shape({
+    id: PropTypes.number,
+    year: PropTypes.number,
+    make: PropTypes.string,
+    model: PropTypes.string,
+    type: PropTypes.string,
+    img: PropTypes.string,
+    description: PropTypes.string,
+    accessories: PropTypes.arrayOf(PropTypes.string),
+    functionalities: PropTypes.arrayOf(PropTypes.string),
+    rentalPrice: PropTypes.string,
+    rentalCompany: PropTypes.string,
+    address: PropTypes.string,
+    fuelConsumption: PropTypes.string,
+    engineSize: PropTypes.string,
+    rentalConditions: PropTypes.string,
+    mileage: PropTypes.number,
+  }),
 };
