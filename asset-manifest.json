@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/goit-react-rent-cars/static/css/main.7b630d19.css",
-    "main.js": "/goit-react-rent-cars/static/js/main.86a9c5f5.js",
+    "main.js": "/goit-react-rent-cars/static/js/main.e29aadfb.js",
     "static/js/324.3cf437dd.chunk.js": "/goit-react-rent-cars/static/js/324.3cf437dd.chunk.js",
-    "static/js/680.2b415055.chunk.js": "/goit-react-rent-cars/static/js/680.2b415055.chunk.js",
+    "static/js/680.efca94b2.chunk.js": "/goit-react-rent-cars/static/js/680.efca94b2.chunk.js",
     "static/js/786.dcd7e365.chunk.js": "/goit-react-rent-cars/static/js/786.dcd7e365.chunk.js",
     "static/js/426.310cc4a5.chunk.js": "/goit-react-rent-cars/static/js/426.310cc4a5.chunk.js",
     "static/js/940.c576697c.chunk.js": "/goit-react-rent-cars/static/js/940.c576697c.chunk.js",
-    "static/js/472.7f9501f2.chunk.js": "/goit-react-rent-cars/static/js/472.7f9501f2.chunk.js",
+    "static/js/472.e621e35d.chunk.js": "/goit-react-rent-cars/static/js/472.e621e35d.chunk.js",
     "static/media/pulp-fiction-john-travolta.gif": "/goit-react-rent-cars/static/media/pulp-fiction-john-travolta.59b46f4510af6cc07976.gif",
     "static/media/carrent.png": "/goit-react-rent-cars/static/media/carrent.ea383ca559c324e5dfd4.png",
     "index.html": "/goit-react-rent-cars/index.html",
     "static/media/heart.svg": "/goit-react-rent-cars/static/media/heart.bb77324c5ab750c4c07b5e7ed081203e.svg",
     "main.7b630d19.css.map": "/goit-react-rent-cars/static/css/main.7b630d19.css.map",
-    "main.86a9c5f5.js.map": "/goit-react-rent-cars/static/js/main.86a9c5f5.js.map",
+    "main.e29aadfb.js.map": "/goit-react-rent-cars/static/js/main.e29aadfb.js.map",
     "324.3cf437dd.chunk.js.map": "/goit-react-rent-cars/static/js/324.3cf437dd.chunk.js.map",
-    "680.2b415055.chunk.js.map": "/goit-react-rent-cars/static/js/680.2b415055.chunk.js.map",
+    "680.efca94b2.chunk.js.map": "/goit-react-rent-cars/static/js/680.efca94b2.chunk.js.map",
     "786.dcd7e365.chunk.js.map": "/goit-react-rent-cars/static/js/786.dcd7e365.chunk.js.map",
     "426.310cc4a5.chunk.js.map": "/goit-react-rent-cars/static/js/426.310cc4a5.chunk.js.map",
     "940.c576697c.chunk.js.map": "/goit-react-rent-cars/static/js/940.c576697c.chunk.js.map",
-    "472.7f9501f2.chunk.js.map": "/goit-react-rent-cars/static/js/472.7f9501f2.chunk.js.map"
+    "472.e621e35d.chunk.js.map": "/goit-react-rent-cars/static/js/472.e621e35d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7b630d19.css",
-    "static/js/main.86a9c5f5.js"
+    "static/js/main.e29aadfb.js"
   ]
 }
